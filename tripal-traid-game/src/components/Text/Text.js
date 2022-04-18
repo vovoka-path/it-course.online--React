@@ -16,14 +16,16 @@ const Text = (props) => {
   const styles = {
     className: cn(
       s.root,
-      { [s.strong]: strong },
-      { [s.italic]: italic },
-      { [s.disabled]: disabled },
-      className,
+      { 
+        [s.strong]: strong, 
+        [s.italic]: italic, 
+        [s.disabled]: disabled 
+      },
+      className
     ),
   };
 
-  console.log("styles = " + styles.className)
+  console.log("styles = " + styles.className);
 
   const text = `
     Welcome! I'm smart component. My name is <Tetx />. 

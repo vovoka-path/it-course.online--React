@@ -8,8 +8,6 @@ const listMenu = MENU.map((item, index) =>
 <li key={index}><a href="/">{item}</a></li>
 );
 
-console.log("Container = " + Container);
-
 const Header = () => {
   return (
     <header className={style.root}>
