@@ -10,8 +10,8 @@ const Cards = () => {
   const [character, setCharacter] = useState(CHARACTER);
 
   const handleLikeClick = (id) => {
-    setCharacter(
-      character.map((item) =>
+    setCharacter((prevState) =>
+      prevState.map((item) =>
         item.id === id ? { ...item, isLike: !item.isLike } : item
       )
     );
