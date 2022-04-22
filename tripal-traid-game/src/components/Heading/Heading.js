@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import cn from "classnames";
-import s from "./Heading.module.css";
+import s from "./Heading.module.scss";
 
 const Heading = (props) => {
   const { children, level = 1, className, isBlack = false } = props;
