@@ -9,16 +9,6 @@ import s from "./CharacterCard.module.scss";
 const CharacterCard = ({ character, onLikeClick }) => {
   const { id, name, description, thumbnail, humanName, isLike } = character;
 
-  character.propTypes = {
-    id: PropTypes.number,
-    name: PropTypes.string,
-    description: PropTypes.objestringct,
-    thumbnail: PropTypes.object,
-    humanName: PropTypes.string,
-    isLike: PropTypes.bool,
-    onLikeClick: PropTypes.func,
-  };
-
   const [active, setActive] = useState(isLike);
 
   const handleClick = () => {
@@ -57,7 +47,15 @@ const CharacterCard = ({ character, onLikeClick }) => {
 CharacterCard.propTypes = {
   children: PropTypes.node,
   className: PropTypes.string,
-  character: PropTypes.object,
+  character: PropTypes.shape({
+    id: PropTypes.number,
+    name: PropTypes.string,
+    description: PropTypes.string,
+    thumbnail: PropTypes.object,
+    humanName: PropTypes.string,
+    isLike: PropTypes.bool,
+    onLikeClick: PropTypes.func,
+  })
 };
 
 export default CharacterCard;

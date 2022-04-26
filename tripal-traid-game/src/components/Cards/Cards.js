@@ -33,11 +33,6 @@ const Cards = () => {
             );
           })}
         </div>
-        {/* <button
-          onClick={() => console.log(character.map((item) => item.isLike))}
-        >
-          CHECK isLike
-        </button> */}
       </Container>
     </section>
   );
