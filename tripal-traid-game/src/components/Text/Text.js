@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import cn from "classnames";
-import s from "./Text.module.css";
+import s from "./Text.module.scss";
 
 const Text = (props) => {
   const {
@@ -10,7 +10,7 @@ const Text = (props) => {
     element = "div",
     strong = false,
     italic = false,
-    disabled = true,
+    disabled = false,
   } = props;
 
   const styles = {
@@ -24,8 +24,6 @@ const Text = (props) => {
       className
     ),
   };
-
-  console.log("styles = " + styles.className);
 
   const text = `
     Welcome! I'm smart component. My name is <Tetx />. 

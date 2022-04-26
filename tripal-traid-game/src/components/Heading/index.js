@@ -1,5 +1,5 @@
 import Heading from "./Heading";
-import styleHeading from './Heading.module.css';
+import styleHeading from './Heading.module.scss';
 
 export {
   styleHeading,
