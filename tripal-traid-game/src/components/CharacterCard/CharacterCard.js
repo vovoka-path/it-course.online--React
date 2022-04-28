@@ -1,9 +1,11 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
 import cn from "classnames";
+
 import Heading from "../Heading";
 import Text from "../Text";
 import { ReactComponent as Like } from "./assets/heart.svg";
+
 import s from "./CharacterCard.module.scss";
 
 const CharacterCard = ({ 
@@ -12,8 +14,6 @@ const CharacterCard = ({
   onBioClick,
  }) => {
   const { id, name, description, thumbnail, humanName, isLike } = character;
-  console.log('CARD ############### id=', id)
-
   const [active, setActive] = useState(isLike);
 
   const handleLikeClick = () => {
@@ -26,11 +26,8 @@ const CharacterCard = ({
       'id': id,
       'isShow': true,
     };
-    //const isShow = true;
-    onBioClick(data);
 
-    //console.log('CARD: data=', data)
-    //console.log('CARD clicked on READ BIO: id', data.id, 'isBioClick', data.isShow)
+    onBioClick(data);
   };
 
   return (

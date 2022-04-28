@@ -1,15 +1,16 @@
 import { useState } from "react";
+
 import Container from "../Container";
 import Heading from "../Heading";
 import CharacterCard from "../CharacterCard";
+
 import s from "./Cards.module.scss";
 
 import { CHARACTER } from "../../data/characterCards";
 
-const Cards = (props) => {
-  const { onBioClick, bioData } = props;
-  console.log('CARDS ###############')
 
+const Cards = (props) => {
+  const { onBioClick } = props;
   const [character, setCharacter] = useState(CHARACTER);
 
   const handleLikeClick = (id) => {
@@ -21,12 +22,8 @@ const Cards = (props) => {
   };
 
   const handleBioClick = (data) => {
-    //console.log('CARDS: id=', data.id, 'isBioClick=', data.isShow)
     onBioClick(data);
   };
-
-  //console.log('CARDS: id', bioClick[0], 'isBioClick', bioClick[1])
-  //handleBioClick();
 
   return (
     <section className={s.cardSection}>

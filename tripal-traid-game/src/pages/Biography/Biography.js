@@ -1,10 +1,13 @@
 import PropTypes from "prop-types";
+
 import Container from "../../components/Container";
 import Text from "../../components/Text";
 import Heading from "../../components/Heading";
+
 import s from "./Biography.module.scss";
 
 import { BIO } from "../../data/bio";
+
 
 function Biography(props) {
   const { id } = props;
