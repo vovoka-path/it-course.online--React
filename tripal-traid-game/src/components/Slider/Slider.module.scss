@@ -7,6 +7,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
+  &.sliderLight {
+    background: #fff;
+  }
 }
 
 .sliderContent {
@@ -52,9 +56,18 @@
   padding: 8px 13px;
   font-size: 20px;
   transition: background 0.15s linear;
+
+  &.buttonLight {
+    color: #333;
+    border: 1px solid #333;
+  }
 }
 
 .button:hover {
   background: rgba(255, 255, 255, 0.1);
   cursor: pointer;
+
+  &.buttonLight {
+    background: rgba(0, 0, 0, 0.1);
+  }
 }

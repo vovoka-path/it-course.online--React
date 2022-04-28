@@ -77,7 +77,7 @@
     height: 20px;
 
     path[id="bg"] {
-      fill: transparent; //rgba(0,0,0,0);
+      fill: rgba(0,0,0,0);
     }
   }
 
@@ -107,4 +107,22 @@
       }
     }
   }
+}
+
+// **********************
+
+.cardSection {
+  display: flex;
+  justify-content: center;
+  padding: 24px 0;
+  background: #f7f7f7;
+}
+
+.cardTittle {
+  text-align: center;
+}
+
+.cardWrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
 }

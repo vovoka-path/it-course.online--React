@@ -6,7 +6,10 @@ import s from "./Cards.module.scss";
 
 import { CHARACTER } from "../../data/characterCards";
 
-const Cards = () => {
+const Cards = (props) => {
+  const { onBioClick, bioData } = props;
+  console.log('CARDS ###############')
+
   const [character, setCharacter] = useState(CHARACTER);
 
   const handleLikeClick = (id) => {
@@ -16,6 +19,14 @@ const Cards = () => {
       )
     );
   };
+
+  const handleBioClick = (data) => {
+    //console.log('CARDS: id=', data.id, 'isBioClick=', data.isShow)
+    onBioClick(data);
+  };
+
+  //console.log('CARDS: id', bioClick[0], 'isBioClick', bioClick[1])
+  //handleBioClick();
 
   return (
     <section className={s.cardSection}>
@@ -28,7 +39,11 @@ const Cards = () => {
           {character.map((item) => {
             return (
               <div key={item.id}>
-                <CharacterCard character={item} onLikeClick={handleLikeClick} />
+                <CharacterCard 
+                  character={item} 
+                  onLikeClick={handleLikeClick}
+                  onBioClick={handleBioClick}
+                />
               </div>
             );
           })}
