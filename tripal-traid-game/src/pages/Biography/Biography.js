@@ -20,12 +20,21 @@ function Biography(props) {
         const type = textElement.type;
         let element;
 
-        if (type === 'paragraph') {
-          element = <Text key={key} element="p">{textElement.text}</Text>
-        } else if (type === 'img') {
-          element = <img key={key} src={textElement.src} className={s.image} alt="bio"/>
-        } else if (type === 'h1' || 'h2') {
-          element = <Heading key={key} level={+type[1]}>{textElement.text}</Heading>
+        switch (type) {
+          case 'paragraph':
+            element = <Text key={key} element="p">{textElement.text}</Text>
+            break;
+          case 'img':
+            element = <img key={key} src={textElement.src} className={s.image} alt="bio"/>
+            break;
+          case 'h1':
+            element = <Heading key={key} level={+type[1]}>{textElement.text}</Heading>
+            break;
+          case 'h2':
+            element = <Heading key={key} level={+type[1]}>{textElement.text}</Heading>
+            break;
+          default:
+            break;
         }
 
         return element;
