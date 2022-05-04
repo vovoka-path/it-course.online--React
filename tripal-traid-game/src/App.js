@@ -7,7 +7,7 @@ import Cards from "./components/Cards";
 import Biography from "./pages/Biography";
 
 
-function App() {
+const App = () => {
   const [ 
     bioData, 
     setBioData 
