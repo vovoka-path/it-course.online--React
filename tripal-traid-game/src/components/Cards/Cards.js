@@ -9,8 +9,7 @@ import s from "./Cards.module.scss";
 import { CHARACTER } from "../../data/characterCards";
 
 
-const Cards = (props) => {
-  const { onBioClick } = props;
+const Cards = ({ onBioClick }) => {
   const [character, setCharacter] = useState(CHARACTER);
 
   const handleLikeClick = (id) => {
