@@ -1,3 +1,4 @@
 node_modules
 tripal-traid-game/package.json
 tripal-traid-game/package-lock.json
+tripal-traid-game/src/components/Button/Button.module copy.scss
