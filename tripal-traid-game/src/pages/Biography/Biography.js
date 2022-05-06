@@ -3,41 +3,46 @@ import PropTypes from "prop-types";
 import Container from "../../components/Container";
 import Text from "../../components/Text";
 import Heading from "../../components/Heading";
+import Button from "../../components/Button";
 
 import s from "./Biography.module.scss";
 
 import { BIO } from "../../data/bio";
 
 
-function Biography(props) {
-  const { id } = props;
+function Biography({ id, onBackClick }) {
   const currentBio = BIO[id];
+
+  const handleBackClick = () => {
+    onBackClick && onBackClick();
+  }
 
   return (
     <Container>
+      <div className={s.btnWrap}>
+        <Button 
+          color="dark" 
+          onClick={handleBackClick}
+          >
+            Go Back
+          </Button>
+      </div>
       {currentBio.map( (textElement, index) => {
         const key = id + '-' + index;
-        const type = textElement.type;
-        let element;
+        const textType = textElement.type;
 
-        switch (type) {
+        switch (textType) {
           case 'paragraph':
-            element = <Text key={key} element="p">{textElement.text}</Text>
-            break;
+            return <Text key={key} element="p">{textElement.text}</Text>
           case 'img':
-            element = <img key={key} src={textElement.src} className={s.image} alt="bio"/>
-            break;
+            return <img key={key} src={textElement.src} className={s.image} alt="bio"/>
           case 'h1':
-            element = <Heading key={key} level={+type[1]}>{textElement.text}</Heading>
-            break;
+            return <Heading key={key} level={+textType[1]}>{textElement.text}</Heading>
           case 'h2':
-            element = <Heading key={key} level={+type[1]}>{textElement.text}</Heading>
-            break;
+            return <Heading key={key} level={+textType[1]}>{textElement.text}</Heading>
           default:
-            break;
+            return <Text>{textElement.text}</Text>
         }
-
-        return element;
       })}
     </Container>
   );
@@ -45,6 +50,7 @@ function Biography(props) {
 
 Biography.propTypes = {
   id: PropTypes.number,
+  onBackClick: PropTypes.func,
 };
 
 export default Biography;
