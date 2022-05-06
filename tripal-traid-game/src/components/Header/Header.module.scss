@@ -24,6 +24,10 @@
 .logo {
   height: 70px;
   width: 125px;
+
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .nav {
