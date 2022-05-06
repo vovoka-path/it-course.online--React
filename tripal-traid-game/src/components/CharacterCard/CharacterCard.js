@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import cn from "classnames";
 
@@ -22,15 +23,8 @@ const CharacterCard = ({
   };
 
   const handleBioClick = () => {
-    // const data = {
-    //   'id': id,
-    //   'isShow': true,
-    // };
-
     onBioClick && onBioClick(id);
   };
-
-  // onBioClick({ 'id': id, 'isShow': true, };)
 
   return (
     <div className={s.root}>
@@ -58,7 +52,7 @@ const CharacterCard = ({
             className={s.readBio} 
             onClick={handleBioClick}
           >
-            <a href="#">Read bio</a>
+            <Link to={"../bio/" + id}>Read bio</Link>
           </div>
         </div>
       </div>
