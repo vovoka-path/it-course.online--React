@@ -1,12 +1,15 @@
 import { useState } from "react";
+
 import Container from "../Container";
 import Heading from "../Heading";
 import CharacterCard from "../CharacterCard";
+
 import s from "./Cards.module.scss";
 
 import { CHARACTER } from "../../data/characterCards";
 
-const Cards = () => {
+
+const Cards = ({ onBioClick }) => {
   const [character, setCharacter] = useState(CHARACTER);
 
   const handleLikeClick = (id) => {
@@ -15,6 +18,10 @@ const Cards = () => {
         item.id === id ? { ...item, isLike: !item.isLike } : item
       )
     );
+  };
+
+  const handleBioClick = (data) => {
+    onBioClick(data);
   };
 
   return (
@@ -28,7 +35,11 @@ const Cards = () => {
           {character.map((item) => {
             return (
               <div key={item.id}>
-                <CharacterCard character={item} onLikeClick={handleLikeClick} />
+                <CharacterCard 
+                  character={item} 
+                  onLikeClick={handleLikeClick}
+                  onBioClick={handleBioClick}
+                />
               </div>
             );
           })}

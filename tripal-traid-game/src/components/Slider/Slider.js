@@ -1,9 +1,14 @@
 import cn from "classnames";
+
 import Container from '../Container';
 import Heading from "../Heading";
+import Button from "../Button";
+
 import s from "./Slider.module.scss";
 
+
 const Slider = () => {
+
   return (
     <section className={s.section}>
       <div className={s.slider}>
@@ -15,7 +20,10 @@ const Slider = () => {
             Wow.Wow.Wow
           </Heading>
           <div className={s.call}>
-            <button className={s.button}>Wow</button>
+            <Button 
+            >
+              Wow
+            </Button>
           </div>
         </Container>
         </div>
