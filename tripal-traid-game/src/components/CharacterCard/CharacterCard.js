@@ -18,17 +18,19 @@ const CharacterCard = ({
 
   const handleLikeClick = () => {
     setActive((prevState) => !prevState);
-    onLikeClick(id);
+    onLikeClick && onLikeClick(id);
   };
 
   const handleBioClick = () => {
-    const data = {
-      'id': id,
-      'isShow': true,
-    };
+    // const data = {
+    //   'id': id,
+    //   'isShow': true,
+    // };
 
-    onBioClick(data);
+    onBioClick && onBioClick(id);
   };
+
+  // onBioClick({ 'id': id, 'isShow': true, };)
 
   return (
     <div className={s.root}>
