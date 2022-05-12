@@ -53,7 +53,6 @@ const CharacterCard = ({
             onClick={handleBioClick}
           >
             <Link to={"/characters/" + id}>Read bio</Link>
-            {/* <Link to={"../bio/" + id}>Read bio</Link> */}
           </div>
         </div>
       </div>
