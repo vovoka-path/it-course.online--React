@@ -23,6 +23,26 @@
   }
 }
 
+.cardSection {
+  display: flex;
+  justify-content: center;
+  padding: 24px 0;
+  background: #f7f7f7;
+}
+
+.cardTittle {
+  text-align: center;
+}
+
+.cardWrap {
+  padding: 24px 0 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-bottom: 12px;
+  row-gap: 32px;
+  column-gap: 24px;
+}
+
 .cardImage {
   max-width: 100%;
   transform: scale(1);
@@ -107,22 +127,4 @@
       }
     }
   }
-}
-
-// **********************
-
-.cardSection {
-  display: flex;
-  justify-content: center;
-  padding: 24px 0;
-  background: #f7f7f7;
-}
-
-.cardTittle {
-  text-align: center;
-}
-
-.cardWrap {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
 }

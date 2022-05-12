@@ -52,7 +52,8 @@ const CharacterCard = ({
             className={s.readBio} 
             onClick={handleBioClick}
           >
-            <Link to={"../bio/" + id}>Read bio</Link>
+            <Link to={"/characters/" + id}>Read bio</Link>
+            {/* <Link to={"../bio/" + id}>Read bio</Link> */}
           </div>
         </div>
       </div>

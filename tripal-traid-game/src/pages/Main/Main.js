@@ -3,7 +3,6 @@ import { useState } from "react";
 import Container from "../../components/Container";
 import Slider from "../../components/Slider";
 import Biography from "../../pages/Biography";
-import About from "../../pages/About";
 import Heading from "../../components/Heading";
 import CharacterCard from "../../components/CharacterCard";
 

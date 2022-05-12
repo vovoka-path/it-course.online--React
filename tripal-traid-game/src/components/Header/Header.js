@@ -35,7 +35,7 @@ const Header = () => {
           </div>
           <ul className={s.nav}>
             <li key="Main"><Link to="/">Main</Link></li>
-            <li key="Characters"><Link to="bio">Characters</Link></li>
+            <li key="Characters"><Link to="characters">Characters</Link></li>
             <li key="About"><Link to="about">About</Link></li>
             <li key="Contacts"><Link to="contacts">Contacts</Link></li>
           </ul>
