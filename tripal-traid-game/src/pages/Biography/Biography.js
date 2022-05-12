@@ -1,7 +1,8 @@
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 
 import Container from "../../components/Container";
 import Text from "../../components/Text";
+import Button from "../../components/Button";
 import Heading from "../../components/Heading";
 
 import s from "./Biography.module.scss";
@@ -11,11 +12,24 @@ import { BIO } from "../../data/bio";
 
 function Biography() {
   const {id} = useParams();
+  const navigate = useNavigate();
 
   const currentBio = BIO[id];
 
+  const handleGoBackClick = () => {
+    navigate(-1);
+  }
+
   return (
     <Container>
+      <div className={s.btnWrap}>
+        <Button 
+          color="dark"
+          onClick={handleGoBackClick}
+          >
+          Go back
+        </Button>
+      </div>
       {
         currentBio.map( (textElement, index) => {
           const key = id + '-' + index;
