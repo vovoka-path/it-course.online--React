@@ -12,7 +12,6 @@ import s from "./CharacterCard.module.scss";
 const CharacterCard = ({ 
   character, 
   onLikeClick, 
-  onBioClick,
  }) => {
   const { id, name, description, thumbnail, humanName, isLike } = character;
   const [active, setActive] = useState(isLike);
@@ -20,10 +19,6 @@ const CharacterCard = ({
   const handleLikeClick = () => {
     setActive((prevState) => !prevState);
     onLikeClick && onLikeClick(id);
-  };
-
-  const handleBioClick = () => {
-    onBioClick && onBioClick(id);
   };
 
   return (
@@ -50,7 +45,6 @@ const CharacterCard = ({
 
           <div 
             className={s.readBio} 
-            onClick={handleBioClick}
           >
             <Link to={"/characters/" + id}>Read bio</Link>
           </div>
@@ -72,7 +66,6 @@ CharacterCard.propTypes = {
     isLike: PropTypes.bool,
   }),
   onLikeClick: PropTypes.func,
-  onBioClick: PropTypes.func,
 };
 
 export default CharacterCard;
