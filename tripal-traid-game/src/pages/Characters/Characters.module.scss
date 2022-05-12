@@ -1,0 +1,111 @@
+.root {
+  padding: 32px 0;
+}
+
+.cardSection {
+  display: flex;
+  justify-content: center;
+  padding: 24px 0;
+  background: #f7f7f7;
+}
+
+.cardTittle {
+  text-align: center;
+}
+
+.cardWrap {
+  padding: 24px 0 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-bottom: 12px;
+  row-gap: 32px;
+  column-gap: 24px;
+}
+
+// **********************
+
+.cardImage {
+  max-width: 100%;
+  transform: scale(1);
+  transform-origin: 0 0;
+  margin-bottom: 0;
+  transition: all .2s ease;
+}
+
+.cardDetails {
+  background: #fff;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 60%;
+  padding: 20px;
+  transition: all .2s ease;
+}
+
+.cardName {
+  margin: 0;
+}
+
+.cardHumanName {
+  color: #e74c3c;
+}
+
+.cardDescription {
+  color: #666;
+  opacity: 0;
+  transition: all .4s ease;
+}
+
+.cardMeta {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #fff;
+  color: #999;
+  padding: 12px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.like {
+  cursor: pointer;
+
+  svg {
+    width: 20px;
+    height: 20px;
+
+    path[id="bg"] {
+      fill: transparent;
+    }
+  }
+
+  &:hover {
+    svg {
+      opacity: .4;
+
+      path[id="bg"] {
+        fill: #FF1D25;
+      }
+    }
+  }
+
+  &.active {
+    svg {
+      width: 20px;
+      height: 20px;
+
+      path[id="bg"] {
+        fill: #FF1D25;
+      }
+    }
+
+    &:hover {
+      svg {
+        opacity: 1;
+      }
+    }
+  }
+}

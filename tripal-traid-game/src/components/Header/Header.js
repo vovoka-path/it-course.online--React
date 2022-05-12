@@ -1,3 +1,4 @@
+import { Link, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import cn from "classnames";
 
@@ -8,8 +9,12 @@ import s from './Header.module.scss';
 
 
 const Header = () => {
+  const navigate = useNavigate();
   const [ isMinimize, setIsMinimize ] = useState(window.scrollY > 60);
-  const MENU = ['Menu 1', 'Menu 2', 'Menu 3', 'Menu 4'];
+
+  const handleLogoClick = () => {
+    navigate('/');
+  }
   
   useEffect(() => {
     const scrollEffect = () => setIsMinimize(window.scrollY > 60);
@@ -20,19 +25,19 @@ const Header = () => {
       window.removeEventListener('scroll', scrollEffect);
     }
   }, []);
-  
-  
+    
   return (
     <header className={s.root}>
       <Container>
         <div className={cn(s.header, {[s.small]: isMinimize})}>
           <div className={s.logo}>
-            <img src={logoPng} alt="Logo" className={s.logo}/>
+            <img src={logoPng} alt="Logo" className={s.logo} onClick={handleLogoClick}/>
           </div>
           <ul className={s.nav}>
-            {MENU.map((item, index) => 
-              <li key={index}><a href="/">{item}</a></li>
-            )}
+            <li key="Main"><Link to="/">Main</Link></li>
+            <li key="Characters"><Link to="characters">Characters</Link></li>
+            <li key="About"><Link to="about">About</Link></li>
+            <li key="Contacts"><Link to="contacts">Contacts</Link></li>
           </ul>
         </div>
       </Container>
