@@ -1,3 +1,6 @@
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
+
 import Container from "../../components/Container";
 import Text from "../../components/Text";
 import Heading from "../../components/Heading";
@@ -8,7 +11,12 @@ import { ABOUT } from "../../data/about";
 
 
 function About() {
+  const { pathname } = useLocation();
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+  
   return (
     <section className={s.cardSection}>
       <Container>

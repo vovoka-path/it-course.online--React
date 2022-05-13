@@ -1,4 +1,5 @@
-import { useParams, useNavigate, Navigate } from "react-router-dom";
+import { useEffect } from "react";
+import { useParams, useNavigate, Navigate, useLocation } from "react-router-dom";
 
 import Container from "../../components/Container";
 import Text from "../../components/Text";
@@ -13,12 +14,17 @@ import { BIO } from "../../data/bio";
 function Biography() {
   const {id} = useParams();
   const navigate = useNavigate();
+  const { pathname } = useLocation();
 
   const currentBio = BIO[id];
 
   const handleGoBackClick = () => {
     navigate(-1);
   }
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
 
   if (!BIO[id]) {
     return <Navigate to="/characters" />

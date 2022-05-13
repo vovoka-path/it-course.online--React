@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 import Container from "../../components/Container";
 import Heading from "../../components/Heading";
@@ -11,6 +12,7 @@ import { CHARACTER } from "../../data/characterCards";
 
 function Characters() {
   const [character, setCharacter] = useState(CHARACTER);
+  const { pathname } = useLocation();
 
   const handleLikeClick = (id) => {
     setCharacter((prevState) =>
@@ -19,6 +21,10 @@ function Characters() {
       )
     );
   };
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
 
   return (
     <>
