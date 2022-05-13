@@ -1,4 +1,4 @@
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, Navigate } from "react-router-dom";
 
 import Container from "../../components/Container";
 import Text from "../../components/Text";
@@ -18,6 +18,10 @@ function Biography() {
 
   const handleGoBackClick = () => {
     navigate(-1);
+  }
+
+  if (!BIO[id]) {
+    return <Navigate to="/characters" />
   }
 
   return (

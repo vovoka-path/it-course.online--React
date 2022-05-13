@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useLocation } from "react-router-dom";
 
 import Container from "../../components/Container";
 import Slider from "../../components/Slider";
@@ -12,6 +13,7 @@ import { CHARACTER } from "../../data/characterCards";
 
 const Main = () => {
   const [character, setCharacter] = useState(CHARACTER);
+  const location = useLocation();
 
   const handleLikeClick = (id) => {
     setCharacter((prevState) =>
