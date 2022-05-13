@@ -5,6 +5,7 @@ import Container from "../../components/Container";
 import Text from "../../components/Text";
 import Button from "../../components/Button";
 import Heading from "../../components/Heading";
+import AnchorLink from "../../components/AnchorLink";
 
 import s from "./Biography.module.scss";
 
@@ -14,8 +15,8 @@ import { BIO } from "../../data/bio";
 function Biography() {
   const {id} = useParams();
   const navigate = useNavigate();
-  const { pathname } = useLocation();
-
+  const { pathname, hash } = useLocation();
+  
   const currentBio = BIO[id];
 
   const handleGoBackClick = () => {
@@ -23,8 +24,15 @@ function Biography() {
   }
 
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
+    if (!hash) {
+      window.scrollTo(0, 0);
+    } else {
+      document.getElementById(hash.slice(1)).scrollIntoView({
+        block: 'center',
+        behavior: 'smooth'
+      });
+    }
+  }, [hash, pathname]);
 
   if (!BIO[id]) {
     return <Navigate to="/characters" />
@@ -53,7 +61,13 @@ function Biography() {
             case 'h1':
               return <Heading key={key} level={+textType[1]}>{textElement.text}</Heading>
             case 'h2':
-              return <Heading key={key} level={+textType[1]}>{textElement.text}</Heading>
+              const hash = `${textElement.text.replace(',', '').split(" ").join("_").toLowerCase()}`;
+
+              return (
+                <Heading key={key} level={+textType[1]} hash={hash}>
+                  {textElement.text} <AnchorLink hash={hash} />
+                </Heading>
+              )
             default:
               return <Text>{textElement.text}</Text>
           }
