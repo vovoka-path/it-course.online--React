@@ -1,0 +1,18 @@
+.root {
+  $sizeIcon: 24px;
+
+  cursor: pointer;
+  
+  svg {
+    width: $sizeIcon;
+    height: $sizeIcon;
+    opacity: 0;
+    transition: .5s;
+  }
+
+  &:hover {
+    svg {
+      opacity: .4;
+    }
+  }
+}
