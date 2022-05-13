@@ -51,8 +51,8 @@ function Biography() {
 
               return (
                 <Heading 
-                key={key} 
-                level={+textType[1]}
+                  key={key} 
+                  level={+textType[1]}
                 >
                   {textElement.text} <AnchorLink hash={hash} />
                 </Heading>
@@ -62,9 +62,9 @@ function Biography() {
 
               return (
                 <Heading 
-                key={key} 
-                level={+textType[1]} 
-                hash={hash}
+                  key={key} 
+                  level={+textType[1]} 
+                  hash={hash}
                 >
                   {textElement.text} <AnchorLink hash={hash} />
                 </Heading>
