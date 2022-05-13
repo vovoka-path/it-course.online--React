@@ -6,6 +6,7 @@ import Characters from "./pages/Characters";
 import About from "./pages/About";
 import Contacts from "./pages/Contacts";
 import Biography from "./pages/Biography";
+import NotFound from "./pages/NotFound";
 
 
 const App = () => {
@@ -17,6 +18,7 @@ const App = () => {
         <Route path="characters" element={<Characters />} />
         <Route path="about" element={<About />} />
         <Route path="contacts" element={<Contacts />} />
+        <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>
   )
