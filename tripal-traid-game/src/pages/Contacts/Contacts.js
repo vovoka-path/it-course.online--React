@@ -1,6 +1,3 @@
-import { useEffect } from "react";
-import { useLocation } from "react-router-dom";
-
 import Container from "../../components/Container";
 import Text from "../../components/Text";
 import Heading from "../../components/Heading";
@@ -11,12 +8,6 @@ import s from "./Contacts.module.scss";
 
 
 function Contacts() {
-  const { pathname } = useLocation();
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
-  
   return (
     <section className={s.contactsSection}>
       <Container>

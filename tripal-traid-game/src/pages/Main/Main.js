@@ -1,5 +1,4 @@
-import { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { useState } from "react";
 
 import Container from "../../components/Container";
 import Slider from "../../components/Slider";
@@ -13,7 +12,6 @@ import { CHARACTER } from "../../data/characterCards";
 
 const Main = () => {
   const [character, setCharacter] = useState(CHARACTER);
-  const { pathname } = useLocation();
 
   const handleLikeClick = (id) => {
     setCharacter((prevState) =>
@@ -22,10 +20,6 @@ const Main = () => {
       )
     );
   };
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname])
 
   return (
     <>

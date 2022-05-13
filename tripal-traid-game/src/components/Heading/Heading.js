@@ -14,8 +14,6 @@ const Heading = (props) => {
   } = props;
   const el = `h${level}`;
 
-
-
   return React.createElement(
     el,
     { id: hash,
