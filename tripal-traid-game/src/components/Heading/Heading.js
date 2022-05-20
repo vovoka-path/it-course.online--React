@@ -8,14 +8,16 @@ const Heading = (props) => {
     children, 
     level = 1, 
     className, 
-    isBlack = false,
+    isBlack,
     backline,
+    hash,
   } = props;
   const el = `h${level}`;
 
   return React.createElement(
     el,
-    { className: cn(
+    { id: hash,
+      className: cn(
       s.root, 
       className, 
       { [s.colorBlack]: isBlack },
@@ -30,11 +32,13 @@ Heading.propTypes = {
   level: PropTypes.number,
   className: PropTypes.string,
   backline: PropTypes.bool,
+  hash: PropTypes.string,
 };
 
 Heading.defaultProps = {
   level: 1,
   backline: false,
+  hash: "",
 }
 
 export default Heading;

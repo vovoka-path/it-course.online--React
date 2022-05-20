@@ -8,7 +8,6 @@ import s from "./Contacts.module.scss";
 
 
 function Contacts() {
-
   return (
     <section className={s.contactsSection}>
       <Container>

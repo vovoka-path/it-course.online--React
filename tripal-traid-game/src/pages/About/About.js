@@ -8,7 +8,6 @@ import { ABOUT } from "../../data/about";
 
 
 function About() {
-
   return (
     <section className={s.cardSection}>
       <Container>

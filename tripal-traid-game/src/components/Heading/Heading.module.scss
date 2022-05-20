@@ -15,6 +15,12 @@
       margin: 15px auto 0;
     }
   }
+
+  &:hover {
+    svg {
+      opacity: .4;
+    }
+  }
 }
 
 .colorBlack {
