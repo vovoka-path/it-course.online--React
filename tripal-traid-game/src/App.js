@@ -9,6 +9,8 @@ import Contacts from "./pages/Contacts";
 import Biography from "./pages/Biography";
 import NotFound from "./pages/NotFound";
 
+import LayoutLogin from "./components/LayoutLogin";
+import LoginPage from "./pages/LoginPage";
 
 const App = () => {
   const { pathname, hash } = useLocation();
@@ -39,6 +41,9 @@ const App = () => {
         <Route path="about" element={<About />} />
         <Route path="contacts" element={<Contacts />} />
         <Route path="*" element={<NotFound />} />
+      </Route>
+      <Route path="/" element={<LayoutLogin />}>
+        <Route path="login" element={<LoginPage />} />
       </Route>
     </Routes>
   )
